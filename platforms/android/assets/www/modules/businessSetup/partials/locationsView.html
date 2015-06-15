@@ -1,0 +1,52 @@
+<div class="location-list-view crud-list" ng-hide="item" ng-tab-add="createItem()">
+    <button class="create-item" ng-click="createItem()" ng-disabled="AILoading">
+        <i class="fa fa-plus"></i>
+        {{'businessSetup:add-location' | i18next}}
+    </button>
+    <hr />
+    <ul>
+        <li class="location-details" ng-repeat="item in itemList | orderBy:'name'">
+            <button class="edit-item" ng-click="editItem(item)">{{'edit-details' | i18next}}</button>
+            <span class="item-title">{{item.name}}</span>
+            <span class="item-subtitle last">{{item.address}}</span>
+            <hr />
+        </li>
+    </ul>
+</div>
+<div class="location-item-view crud-item" ng-show="item">
+    <form name="itemForm" novalidate ng-enter="saveItem(item)">
+        <div class="form-input">
+            <label name="name">{{'businessSetup:location-details.name' | i18next}}</label>
+            <input name="name" ng-model="item.name" placeholder="{{'businessSetup:location-details.placeholder.name' | i18next}}"  required ng-maxlength=50 />
+
+            <div class="error-messages" ng-messages="itemForm.name.$error" ng-if="itemForm.name.$touched">
+                <div ng-message="required">{{'businessSetup:error.required' | i18next}}<i class='fa fa-2x fa-times'></i></div>
+                <div ng-message="maxlength">{{'businessSetup:error.maxlength' | i18next}}<i class='fa fa-2x fa-times'></i></div>
+                <div ng-message="duplicatename">{{'businessSetup:error.duplicatename' | i18next}}<i class='fa fa-2x fa-times'></i></div>
+            </div>
+        </div>
+        <hr />
+        <!-- <div class="form-input">
+            <label name="address">{{'businessSetup:location-details.address' | i18next}}</label>
+            <input name="address" ng-blur="updateAddress()" ng-model="item.address" placeholder="{{'businessSetup:location-details.placeholder.address' | i18next}}"/>
+        </div>
+
+        <div class="form-input left-col">
+            <label name="city">{{'businessSetup:location-details.city' | i18next}}</label>
+            <input name="city" ng-model="item.city" placeholder="{{'businessSetup:location-details.placeholder.city' | i18next}}"/>
+        </div>
+        
+        <div class="form-input right-col">
+            <label name="postCode">{{'businessSetup:location-details.post-code' | i18next}}</label>
+            <input name="postCode" type="number" ng-model="item.postCode" placeholder="{{'businessSetup:location-details.placeholder.post-code' | i18next}}"/>
+        </div>
+
+        <div class="form-input">
+            <label name="country">{{'businessSetup:location-details.country' | i18next}}</label>
+            <input name="country" ng-model="item.country" placeholder="{{'businessSetup:location-details.placeholder.country' | i18next}}"/>
+        </div> -->
+    </form>
+
+    <button class="save-button" ng-click="saveItem(item)" ng-disabled="AILoading"><span ng-i18next>{{AILoading ? 'saving' : 'save-details'}}</span><ellipsis-animated ng-show="AILoading"/></button>
+    <button class="cancel-button" ng-hide="!itemList.length && newItem" ng-click="cancelEdit()">{{'cancel' | i18next}}</button>
+</div>

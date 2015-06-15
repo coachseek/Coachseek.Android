@@ -1,0 +1,136 @@
+.weekday{
+    width: 100%;
+    overflow: hidden;
+    margin: 10px auto;
+    border-radius: 5px;
+
+    &.open{
+        .toggle-time-slot{
+            background: $green;
+        }
+    }
+
+    &.closed{
+        .toggle-time-slot{
+            background: $dark-grey;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+
+    .weekday-text{
+        background: $background-grey;
+        color: $dark-grey;
+        position: relative;
+        height: 35px;
+        width: 75px;
+        padding-right: 5px;
+        text-align: right;
+        line-height: 35px;
+        float: left;
+        font-size: 12px;
+        z-index: 1;
+    }
+    time-range-picker{
+        background: $white;
+        z-index: 0;
+        float: left;
+        position: relative;
+        width: 315px;
+        text-align: center;
+
+        .to-text{
+            font-size: 16px;
+            margin: 0 20px;
+        }
+
+        input[readonly]{
+            background-color: $white;
+        }
+
+        .time-picker-container{
+            width: 445px;
+            margin-left: -75px;
+        }
+
+        &.ng-invalid{
+            background: rgba(231, 76, 60, .5);
+        }
+        &.slide-closed{
+            margin-left: 0px;
+            -webkit-transition:all linear 0.3s;
+            transition:all linear 0.3s;
+        }
+        &.slide-closed.ng-hide {
+            margin-left: -335px;
+        }
+    }
+
+    .toggle-time-slot{
+        float: left;
+        border: none;
+        height: 35px;
+        width: 35px;
+        color: $white;
+        outline: none;
+
+        i{
+            font-weight: bold;        
+        }
+    }
+}
+
+
+@media (max-width: 768px){
+    .weekday{
+        time-range-picker{
+            width: 100%;
+            .to-text{
+                display: none;
+            }
+            .time-picker-container{
+                width: 100%;
+                margin-left: 0px;
+            }
+            .time-picker-time{
+                margin-left: 0px;
+                position: relative;
+                left: 15px;
+            }
+            &.slide-closed{
+                -webkit-transition: all linear 0s;
+                transition: all linear 0s;
+            }
+        }
+        &.closed{
+            .weekday-text{
+                position: relative;
+            }
+            .toggle-time-slot{
+                position: relative;
+                left: 0;
+            }
+        }
+        .weekday-text{
+            position: absolute;
+            text-align: center;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+
+        .toggle-time-slot{
+            position: absolute;
+            right:20px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+
+        }
+
+    }
+}
+
+
+
+
+

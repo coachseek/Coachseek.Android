@@ -1,0 +1,138 @@
+[state^="scheduling"] {
+    width: 100%;
+    min-width: 290px;//minimum size for calendar
+}
+
+.service-drag-helper{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 30px;
+    width: 90px;
+    color: white;
+    font-size: .85em;
+    border: 1.5px solid;
+    @extend %service-background-colors-60;
+    @extend %service-border-colors;
+}
+
+@media (max-width: 768px){
+    [state^="scheduling"]{
+        .session-modal.crud-item{
+            width: 100%;
+            .session-header{
+                padding: 5px 22px;
+            }
+            form span.money-sign{
+                top:34px;
+                position: relative;
+            }
+
+        }
+
+        div.calendar-container {
+            background: #eee;
+
+            .fc-unthemed .fc-today{
+                color: $green;
+                background: transparent;
+            }
+            .calendar{
+                .fc-toolbar{
+                    top: 10px;
+                    position: relative;
+                    margin: 0px auto 15px auto;
+                    z-index: 10;
+
+                    .fc-left{
+                        float:none;
+                    }
+                    .fc-center{
+                        top:13px;
+                        margin-bottom: 35px;
+                    }
+                    .fc-right{
+                        position: relative;
+                        width: 100%;
+                        right:0;
+                        float: none;
+                        .fc-button{
+                            width: calc(100%/3);
+                            height: 45px;
+                            background: $white;
+                            border: 0px;
+                            &.fc-state-active{
+                                background: $dark-grey;
+                                border-radius: 0px;
+                            }
+                        }
+                        .fc-today-button{
+                            margin-left: 0px;
+                        }
+                    }
+                }
+            }
+
+            .dropdown-container{
+                float: left;
+                position: relative;
+                width: 50%;
+                top:0px;
+                height: 45px;
+                padding: 7px 0px;
+                border-right:0px;
+                text-align: center;
+                background: $white;
+                z-index: 11;
+               
+                select{
+                    background: transparent;
+                     color: $dark-grey;
+                    text-indent: 30%;
+                    &:hover{
+                        background: white;
+                    }
+                }
+             
+            }
+        }
+
+        div.services-list-container{
+            width: 100%;
+            h4{
+                display: none !important;
+            } 
+            .services-list{
+                width: 100%;
+                margin-top: 30px;
+
+                .services-list-show{
+                    display: block;
+                }
+                .services-list-hide{
+                    display: none;
+                }
+            }
+
+        }
+        .calendar-container .coach-title {
+            position: relative;
+            top:105px;
+        }
+        .toggle-service-drawer{
+                position: fixed;
+                right:20px;
+                top:18px;
+                z-index: 9998;
+                border: 0px;
+                background: transparent;
+
+                i{
+                 color: $white;
+                }   
+
+        }
+      
+    }
+
+}    

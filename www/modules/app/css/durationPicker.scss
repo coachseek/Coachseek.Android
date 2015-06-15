@@ -1,0 +1,23 @@
+duration-picker{
+    display: block;
+
+    .duration-picker-container{
+        border-radius: 5px;
+        &.editing{
+            background: $background-grey;
+        }
+
+        input[readonly]{
+            background-color: $white;
+        }
+
+        .time-picker-container{
+            width: 100%;
+
+            .button-container{
+                position: absolute;
+                bottom: 0;
+            }
+        }
+    }
+}

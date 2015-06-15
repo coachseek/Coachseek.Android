@@ -1,0 +1,20 @@
+<hr/>
+<div class="booking-details-container">
+    <div class="booking-details">
+        <h4>{{'booking:booking-for' | i18next}} {{currentBooking.customer.firstName}} {{currentBooking.customer.lastName}}</h4>
+        <p>{{currentBooking.filters.location.name}}</p>
+        <p>{{currentBooking.filters.service.name}}</p>
+        <p>{{calculateBookingDateRange()}}</p>
+        <h2>{{'booking:confirmation.total' | i18next}} <span ng-i18next="denominations.{{business.currency}}"></span>{{calculateTotalPrice()}} {{business.currency}}</h2>
+    </div>
+    <loading-animation ng-show="processingBooking"></loading-animation>
+    <div ng-hide="processingBooking || bookingConfirmed">
+        <button class="back-button" ui-sref="booking.details">{{'booking:confirmation.change-booking' | i18next}}</button>
+        <button class="continue-button" ng-click="processBooking()">{{'booking:confirmation.process-booking' | i18next}}</button>
+    </div>
+    <div ng-show="bookingConfirmed" class="booking-confirmed">
+        <h4>{{'booking:confirmation.booking-confirmed' | i18next}}</h4>
+        <button class="continue-button" ng-click="resetBookings()">{{'booking:confirmation.reset-bookings' | i18next}}</button>
+    </div>
+</div>
+<hr/>

@@ -1,0 +1,35 @@
+/* Circled */
+.indicator-container{
+  width: 70px;
+  height: 55px;
+  cursor: pointer;
+  background: $dark-grey;
+  float: left;
+  position: relative;
+
+  div{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 7.5px;
+    left: 15px;
+  }
+  .outer-logo{
+    background: url("../assets/pics/logo-small-outer.png") no-repeat center;
+    background-size: 100%;
+  }
+
+  .inner-logo{
+    background: url("../assets/pics/logo-small-inner.png") no-repeat center;
+    background-size: 100%;
+
+    &.active {
+      -webkit-animation:spin 1.5s linear infinite;
+      -moz-animation:spin 1.5s linear infinite;
+      animation:spin 1.5s linear infinite;
+    }
+  }
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
