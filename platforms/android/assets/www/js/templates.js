@@ -110,7 +110,7 @@ angular.module('app').run(['$templateCache', function($templateCache) {
     "        <label>{{'booking:booking-admin.address' | i18next}}</label>\n" +
     "        <input type=\"text\" ng-readonly=\"true\" value=\"{{currentUser.business.domain}}.coachseek.com\">\n" +
     "        <a  class=\"booking-preview-button\"\n" +
-    "            ng-href=\"window.open('https://{{currentUser.business.domain}}.coachseek.com', '_system');\"\n" +
+    "            ng-href=\"window.open('https://{{currentUser.business.domain}}.coachseek.com', '_system','location=yes');\"\n" +
     "        >\n" +
     "            {{'booking:preview-button' | i18next}}\n" +
     "        </a>\n" +

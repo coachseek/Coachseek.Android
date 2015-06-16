@@ -11626,17 +11626,17 @@ repeat-selector select {
   }
 
   .attendance-list div.customer-list ul {
-    height: calc(100vh - 330px);
+    height: 100vh;
   }
   .attendance-list div.customer-list ul.short-list {
-    height: calc(100vh - 365px);
+    height: 100vh;
   }
 
   .attendance-list {
     padding: 0px 10px;
   }
   .attendance-list .student-list {
-    height: calc(100vh - 330px);
+    height: 100vh;
   }
   .attendance-list .student-list .student-details .item-title {
     line-height: 21px;
@@ -11645,7 +11645,7 @@ repeat-selector select {
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   .attendance-list .student-list, .attendance-list .customer-list ul {
-    height: calc(100vh - 315px);
+    height: 100vh;
   }
 }
 [state^="scheduling"] .calendar-fix {
@@ -13205,7 +13205,6 @@ be a descendant of the grid when it is being dragged.
   cursor: pointer;
 }
 [state^="scheduling"] .session-modal .session-form {
-  height: 100%;
   overflow-y: scroll;
   padding: 0 35px;
 }
@@ -13338,11 +13337,6 @@ be a descendant of the grid when it is being dragged.
   }
 }
 /*Ipad Landscape*/
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  [state^="scheduling"] .session-modal .session-form {
-    height: calc(100vh - 250px);
-  }
-}
 .session-or-course-modal-backdrop {
   opacity: 0.3 !important;
   background: #525252;

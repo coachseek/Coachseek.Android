@@ -83,7 +83,7 @@
         }
 
         .session-form{
-            height: 100%;
+            // height: calc(100vh - 285px);
             overflow-y: scroll;
             padding: 0 35px;
 
@@ -258,7 +258,7 @@
     [state^="scheduling"] {
         .session-modal{
             .session-form{
-                height: calc(100vh - 250px);
+                // height: calc(100vh - 250px);
             }
         }
     }
